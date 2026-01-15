@@ -71,8 +71,12 @@
       .then(res => res.text())
       .then(html => {
         // Replace the placeholder with the loaded sidebar
+        const temp = document.createElement('div');
+        temp.innerHTML = html;
+        const sidebar = temp.firstElementChild;
         const placeholder = document.getElementById('sidebar-placeholder');
-        placeholder.outerHTML = html; // replaces placeholder entirely
+        placeholder.replaceWith(sidebar);
+        if (typeof loadAdminProfile === 'function') loadAdminProfile();
       })
       .catch(err => console.error('Error loading sidebar:', err));
 </script>

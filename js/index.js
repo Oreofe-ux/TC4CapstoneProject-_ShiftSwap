@@ -1,26 +1,12 @@
 // ==================== index.js ====================
 
-// ==================================================
-// 0️⃣ SIMULATE TOKEN (REMOVE WHEN LOGIN IS READY)
-// ==================================================
-//if (!localStorage.getItem("token")) {
-//  localStorage.setItem("token", "SIMULATED_JWT_TOKEN_FOR_TESTING");
-  //console.log("Simulated token added for testing.");
-//}//
+const token = localStorage.getItem("token");
 
-// ==================================================
-// 0️⃣a SIMULATE ADMIN PROFILE (TEMP – FOR TESTING)
-// ==================================================
-if (!localStorage.getItem("adminProfile")) {
-  const tempAdminProfile = {
-    name: "Kemi Adebayo",
-    role: "Hospital Manager",
-    avatar: "https://www.gravatar.com/avatar/?d=mp&s=150"
-  };
-
-  localStorage.setItem("adminProfile", JSON.stringify(tempAdminProfile));
-  console.log("Simulated admin profile added for testing.");
+if (!token) {
+  window.location.href = "login.html";
 }
+
+
 
 // ==================================================
 // 1️⃣ HELPER: GET TOKEN
@@ -54,56 +40,25 @@ async function loadSidebar() {
 // 3️⃣ ADMIN PROFILE (SIDEBAR HEADER + FOOTER)
 // ==================================================
 async function loadAdminProfile() {
-  const token = getToken();
-  if (!token) return;
+  // Hardcoded admin data
+  const adminData = {
+    name: "Dr. A. Aina",
+    role: "Chief Admin",
+    avatar: "https://www.gravatar.com/avatar/?d=mp&s=150"
+  };
 
-  let adminData = null;
-
-  // Try backend first
-  try {
-    const response = await fetch(
-      "https://shiftswap-backend-4w40.onrender.com/api/admin/profile",
-      {
-        headers: {
-          Authorization: `Bearer ${token}`
-        }
-      }
-    );
-
-    if (response.ok) {
-      adminData = await response.json();
-    }
-  } catch {
-    console.warn("Backend not available, using local admin profile.");
-  }
-
-  // Fallback to localStorage
-  if (!adminData) {
-    adminData = JSON.parse(localStorage.getItem("adminProfile"));
-  }
-
-  if (!adminData) return;
-
-  const avatarUrl =
-    adminData.avatar && adminData.avatar !== ""
-      ? adminData.avatar
-      : "https://www.gravatar.com/avatar/?d=mp&s=150";
-
-  // Sidebar HEADER
+  // Sidebar HEADER (avatar only)
   const sidebarAvatar = document.getElementById("sidebar-avatar");
-  const sidebarName = document.getElementById("admin-name");
-
-  if (sidebarAvatar) sidebarAvatar.src = avatarUrl;
-  if (sidebarName) sidebarName.textContent = "Admin";
+  if (sidebarAvatar) sidebarAvatar.src = adminData.avatar;
 
   // Sidebar FOOTER
   const footerAvatar = document.getElementById("footer-avatar");
   const footerName = document.getElementById("footer-name");
   const footerRole = document.getElementById("footer-role");
 
-  if (footerAvatar) footerAvatar.src = avatarUrl;
-  if (footerName) footerName.textContent = adminData.name || "";
-  if (footerRole) footerRole.textContent = adminData.role || "";
+  if (footerAvatar) footerAvatar.src = adminData.avatar;
+  if (footerName) footerName.textContent = adminData.name;
+  if (footerRole) footerRole.textContent = adminData.role;
 }
 
 // ==================================================
@@ -161,28 +116,60 @@ const departmentsList = [
 
 const mockShifts = [
   {
-    staffName: "Alice Johnson",
-    date: "12/01/2026",
+    staffName: "Agnes Onyebuchi",
+    date: "04/01/2026",
     time: "9am - 4pm",
-    department: "Emergency",
+    department: "Pediatrics",
     status: "Pending",
     reviewStatus: "Review"
   },
   {
-    staffName: "Bob Smith",
-    date: "12/01/2026",
-    time: "4pm - 12am",
-    department: "ICU",
+    staffName: "Mopelola Williams",
+    date: "04/01/2026",
+    time: "8am - 3pm",
+    department: "OB-GYN",
+    status: "Pending",
+    reviewStatus: "Review"
+  },
+  {
+    staffName: "Samuel Oluwaseyi",
+    date: "04/01/2026",
+    time: "7am - 2pm",
+    department: "Pharmacy",
+    status: "Pending",
+    reviewStatus: "Review"
+  },
+  {
+    staffName: "Peter Ayokunle",
+    date: "04/01/2026",
+    time: "3pm - 8pm",
+    department: "Emergency",
+    status: "Risk",
+    reviewStatus: "Review"
+  },
+  {
+    staffName: "Gift Imah",
+    date: "04/01/2026",
+    time: "9am - 4pm",
+    department: "Radiology",
+    status: "Risk",
+    reviewStatus: "Review"
+  },
+  {
+    staffName: "Blessing Martins",
+    date: "04/01/2026",
+    time: "8am - 3pm",
+    department: "Surgery",
     status: "Approved",
     reviewStatus: "Reviewed"
   },
   {
-    staffName: "Clara Lee",
-    date: "12/01/2026",
-    time: "9am - 4pm",
-    department: "Pediatrics",
-    status: "Risk",
-    reviewStatus: "Review"
+    staffName: "Chika Emeremu",
+    date: "04/01/2026",
+    time: "3pm - 8pm",
+    department: "Physiotherapy",
+    status: "Approved",
+    reviewStatus: "Reviewed"
   }
 ];
 

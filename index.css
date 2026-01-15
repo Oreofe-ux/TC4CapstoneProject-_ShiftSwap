@@ -16,11 +16,17 @@ html, body{
 }
 
 .sidebar{
+  position: fixed; /* fix sidebar to left */
+  top: 0;
+  left: 0;
+  height: 100vh; /* full height */
+  width: 250px; /* adjust width as needed */
+  overflow-y: auto; /* allow sidebar to scroll if needed */
   background-color: rgba(0, 151, 178, 0.5);
   border: 3px solid #0097B2;
   display: flex;
   flex-direction: column;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.8)
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.8);
 }
 
 .sidebar-header{
@@ -39,6 +45,7 @@ html, body{
 .admin-info{
   display: flex;
   gap: 10px;
+  align-items: center;
 }
 
 .admin-name{
@@ -46,9 +53,27 @@ html, body{
   font-size: 20px;
 }
 
+.admin-details{
+  display: flex;
+  flex-direction: column;
+}
+
+.admin-role{
+  font-size: 14px;
+  color: #666;
+}
+
+.admin-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+
 .sidebar-separator{
   border: 1.5px solid rgba(29, 114, 219, 0.5);
-  margin: 0 0 20px 0; /* remove top gap to pull line up */
+  margin: 0 0 20px 0;
 }
 
 .sidebar-nav ul{
@@ -93,16 +118,12 @@ html, body{
 
 .footer-profile{
   display: flex;
+  flex-direction: row;
   align-items: center;
+  justify-content: center;
   gap: 20px;
-  width: 100%; /* so children can space out */
+  width: 100%;
 }
-
-/* .footer-profile{
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}*/
 
 .footer-text{
   display: flex;
@@ -156,9 +177,11 @@ html, body{
 
 /* Main content styling */
 .dashboard-content{
+  margin-left: 250px; /* push main content to the right of fixed sidebar */
   flex-grow: 1;
   padding: 15px;
-  border: 3px solid #0097B2;
+  overflow-y: auto; /* only main content scrolls */
+  height: 100vh; /* full height for scrolling */
 }
 
 .dashboard-header{
@@ -414,6 +437,8 @@ tbody tr:last-child td:last-child{
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+  margin-left: 250px; /* push content to the right of fixed sidebar */
+  overflow-y: auto; /* allow scrolling if needed */
 }
 
 .tabs{
