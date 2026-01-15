@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ShiftSwap | Dashboard</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Inter', sans-serif;
+        }
+    </style>
+</head>
+<body class="flex min-h-[100vh] w-full">
+    <nav class="bg-[#0097B280] w-[20%] flex flex-col">
+        <div class="flex items-center justify-between mt-[11px] mx-auto w-[80%]">
+            <img src="./assets/Ellipse 4.png" alt="admin-avatar"/>
+            <span class="w-0 h-0 border-t-[6px] border-t-transparent border-b-[6px] border-b-transparent border-l-[8px] border-l-[8px] border-l-[#000000BF]"></span>
+            <h2 class="text-[22px] font-bold">Admin</h2>
+        </div>
+        <div class="pl-[14px] pr-[36px] flex-1">
+            <ul class="hover:[&_li]:bg-[#1d72dbb3] hover:[&_li]:rounded-[8px] hover:[&_li]:h-[40px]">
+                <li class="flex gap-3 mb-[34px] mt-[52px]">
+                    <img src="./assets/mage_dashboard-bar-fill (1).png" alt="dashboard-icon"/>
+                    <a href="https://github.com/Oreofe-ux/TC4CapstoneProject-_ShiftSwap/tree/manager-dashboard/index.html" class="text-[16px] font-medium">Dashboard</a>
+                </li>
+                <li class="flex gap-3 mb-[34px]">
+                    <img src="./assets/uis_schedule.png" alt="schedule-icon"/>
+                    <a href="" class="text-[16px] font-medium">Schedule</a>
+                </li>
+                <li class="flex gap-3 mb-[34px]">
+                    <img src="./assets/fluent_approvals-app-24-filled.png" alt="approvals-icon"/>
+                    <a href="ScheduleList.html" class="text-[16px] font-medium">Approvals</a>
+                </li>
+                <li class="flex gap-3 mb-[34px]">
+                    <img src="./assets/medical-icon_i-care-staff-area.png" alt="staff-icons"/>
+                    <a href="" class="text-[16px] font-medium">Staff</a>
+                </li>
+                <li class="flex gap-3 mb-[34px]">
+                    <img src="./assets/mingcute_alert-fill.png" alt="alert-icon"/>
+                    <a href="" class="text-[16px] font-medium">Emergency Broadcast</a>
+                </li>
+                <li class="flex gap-3 ">
+                    <img src="./assets/basil_notification-solid.png" alt="notifications-icon"/>
+                    <a href="" class="text-[16px] font-medium">Notifications</a>
+                </li>
+            </ul>
+        </div>
+        <div class="flex justify-between items-center w-[75%] p-[16px]">
+            <img src="./assets/Logo.png"/>
+            <div>
+                <h3 class="text-[16px] font-semibold">Dr. A. Aina</h3>
+                <p class="text-[16px]">Chief Admin</p>
+            </div>
+        </div>
+        <div class="">
+            <a href="" class="flex justify-center gap-[5px] text-[16px] font-medium">
+                Logout <span><img src="./assets/majesticons_logout.png"/></span>
+            </a>
+        </div>
+    </nav>
+    <main class="w-full border-[3px] border-[#1D72DBC4] py-[16px] px-[24px] ml-[33px] mt-[19px]">
+        <header class="flex justify-between w-full mb-[24px] py-[33.5px]">
+            <h1 class="text-[24px] font-bold">Shift Management</h1>
+            <button class="border-[1px] bg-[#1D72DBB3] pl-[16px] rounded-[8px] flex items-center gap-[16px] text-[16px]">
+                <span><img src="./assets/chevron-down.png"/></span>
+                Create Shift
+            </button>
+        </header>
+
+        <div class="fixed w-screen h-[3px] left-0 top-[105px]" style="background-color: rgba(29, 114, 219, 0.5)"></div>
+
+        <section class="w-full">
+            <div class="flex w-full py-[16px] gap-[20px]" >
+            <div class="flex p-[16px] bg-[#16A34AB3] rounded-[8px] w-[25%] justify-between">
+                <div class="open-shift-box-text">
+                    <h2 class="text-[16px] font-semibold mb-[16px]">Open Shifts</h2>
+                    <p class="text-[14px] font-medium"><span class="font-bold text-[24px] pr-[8px]">12</span> +2% vs last week</p>
+                </div>
+                <div class="open-shift-box-circle">
+                    <img src="./assets/Icon.png"/>
+                </div>
+            </div>
+            <div  class="flex p-[16px] bg-[#FF4C4099] rounded-[8px] w-[25%] justify-between">
+                <div class="urgent-need-box-text">
+                    <h2 class="text-[16px] font-semibold mb-[16px]">Urgent Need</h2>
+                    <p class="text-[14px] font-medium"><span class="font-bold text-[24px] pr-[8px]">3</span> +15% surge</p>
+                </div>
+                <div class="urgent-need-box-circle">
+                    <img src="./assets/Icon.png"/>
+                </div>
+            </div>
+            <div  class="flex p-[16px] bg-[#1D72DB99] rounded-[8px] w-[25%] justify-between">
+                <div class="filled-ratio-box-text">
+                    <h2 class="text-[16px] font-semibold mb-[16px]">Filled Ratio</h2>
+                    <p class="text-[14px] font-medium"><span class="font-bold text-[24px] pr-[8px]">85%</span> +5% efficiency</p>
+                </div>
+                <div class="filled-ratio-box-circle">
+                    <img src="./assets/Icon.png"/>
+                </div>
+            </div>
+            <div  class="flex p-[16px] bg-[#FF4C4099] rounded-[8px] w-[25%] justify-between">
+                <div class="staff-at-risk-box-text">
+                    <h2 class="text-[16px] font-semibold mb-[16px]">Staff At Risk</h2>
+                    <p class="text-[14px] font-medium"><span class="font-bold text-[24px] pr-[8px]">4</span> Approaching Overtime</p>
+                </div>
+                <div class="staff-at-risk-box-circle">
+                    <img src="./assets/Icon.png"/>
+                </div>
+            </div>
+            </div>
+            <div class="flex px-[24px] pt-[16px] gap-[60px] items-center border-b-[2px] border-b-[#0097B280] pb-[26px]">
+                <a class="flex gap-[8px] cursor-pointer" href="ScheduleCalendar.html">
+                    <span><img src="./assets/Rectangle 20.png"/></span>Calendar View
+                </a>
+                <a class="flex gap-[8px] cursor-pointer" href="ScheduleList.html">
+                    <span><img src="./assets/Rectangle 20 (2).png"/></span>List View
+                </a>
+            </div>
+            <hr>
+        </section>
+        <section class="border-[1px] rounded-[8px] border-black mt-[24px]">
+            <div class="border-b-[1px] py-[16px] pl-[24px] flex justify-between items-center border-b-black w-full">
+               <div class="flex gap-[16px] justify-center items-center w-[80%]">
+                <div class="flex gap-[16px] py-[12px] px-[24px] bg-[#46c3f033] rounded-[8px] w-[100%] border-black border-[1px]">
+                    <span class="search-icon"><img src="./assets/search (2).png"/></span>
+                    <input type="search" placeholder="Search by staff, department, or ID..." class="bg-transparent w-full outline-none "/>
+                </div>
+                <div class="">
+                    <button class="flex items-center border border-black gap-[16px] px-[16px] py-[12px] bg-[#46c3f040] w-[120px] rounded-[8px]">
+                        <img src="./assets/search.png " />
+                        Filters
+                    </button>
+                </div>
+                <div class="sort-wrapper">
+                    <button class="flex items-center border border-black rounded-[8px] w-[120px] px-[16px] py-[12px] gap-[16px] bg-[#1d72db40]">
+                        <img src="./assets/search (3).png"/>
+                        Sort
+                    </button>
+                </div>
+                </div> 
+                <p class="text-[16px] font-medium" id="visibleShifts">
+                    Showing 12 of 45 shifts
+                </p>
+            </div>
+
+            <div class="shift-table">
+                <table class="w-full border">
+                    <thead class="border border-b-black [&_th]:py-[13px] [&_th]:px-[24px] [&_th]:text-left [&_th]:text-[14px] [&_th]:font-bold [&_th]:leading-[18px]">
+                        <tr>
+                            <th scope="col">SHIFT DETAILS</th>
+                            <th scope="col">REQUIREMENT</th>
+                            <th scope="col">LOCATION</th>
+                            <th scope="col">STATUS</th>
+                            <th scope="col" class="">ACTIONS</th>
+                        </tr>
+                    </thead>
+
+                    <tbody class="bg-[#1D72DB1A] [&_td]:pl-[24px] [&_td]:py-[20px]">
+                        <tr class="border-b border-b-black">
+                            <td class="flex gap-[12px] items-center">
+                                <div class="border py-[4px] px-[12px] border-black rounded-[8px]">
+                                    <p class="text-center text-[12px] font-semibold">JAN</p>
+                                    <p class="text-center text-[20px] font-semibold">05</p>
+                                </div>
+                                <div>
+                                    <p class="text-[14px] font-medium leading-[20px]">ICU Night Shift</p>
+                                    <p class="text-[14px] font-bold leading-[20px]">19:00 - 07:00, 12hrs</p>
+                                </div>
+                            </td>
+
+                            <td>
+                                <div class="bg-[#ffffff] w-[142px]
+                                flex gap-[8px]">
+                                    <span class="border-[1px] border-black rounded-[4px] px-[8px] py-[2px] text-[12px] leading-[18px] font-medium">RN</span>
+                                    <span class="border-[1px] border-black rounded-[4px] px-[8px] py-[2px] text-[12px] leading-[18px] font-medium">ACLS</span>
+                                    <span class="border-[1px] border-black rounded-[4px] px-[8px] py-[2px] text-[12px] font-medium leading-[18px]">BLS</span>
+                                </div>
+                            </td>
+
+                            <td>
+                                <div>
+                                    <p class="text-[14px] leading-[20px]">Main Campus</p>
+                                    <p class="text-sm font-bold ">West Wing</p>
+                                </div>
+                            </td>
+
+                            <td>
+                                <div class="flex flex-col gap-[6px]">
+                                    <p class="text-[14px] font-semibold leading-[20px]">Critical Shortage</p>
+                                    <div class="w-[202px] rounded-[4px] bg-[#f9f5ff] h-[8px]">
+                                        <div class="bg-[#ff4c4099] rounded-[4px] h-[8px] w-[30%]"></div>
+                                    </div>
+                                    <p class="text-[12px] leading-[18px]">1/4 filled</p>
+                                </div>
+                            </td>
+
+                            <td class="">
+                                <button class="flex justify-center items-center h-[20px] p-0 ">
+                                    <img src="./assets/Dropdown.png" class=""/>
+                                </button>
+                            </td>
+                        </tr>
+
+                        <tr class="border-b border-b-black">
+                            <td class="flex gap-[12px] items-center">
+                                <div class="border py-[4px] px-[12px] border-black rounded-[8px]">
+                                    <p class="text-center text-[12px] font-semibold">JAN</p>
+                                    <p class="text-center text-[20px] font-semibold">06</p>
+                                </div>
+                                <div>
+                                    <p class="text-[14px] font-medium leading-[20px]">Pediatrics Day  Shift</p>
+                                    <p class="text-[14px] font-bold leading-[20px]">7:00 - 19:00, 12hrs</p>
+                                </div></td>
+
+                                <td>
+                                <div class="bg-[#ffffff] w-[142px]
+                                flex gap-[8px]">
+                                    <span class="border-[1px] border-black rounded-[4px] px-[8px] py-[2px] text-[12px] font-medium leading-[18px]">LPN</span>
+                                    <span class="border-[1px] border-black rounded-[4px] px-[8px] py-[2px] text-[12px] font-medium leading-[18px]">PALS</span>
+                                </div>
+                            </td>
+
+                            <td>
+                                <div>
+                                    <p class="text-[14px] leading-[20px]">Children's Wing</p>
+                                    <p class="text-sm font-bold ">Floor 3</p>
+                                </div>
+                            </td>
+
+                            <td>
+                                <div class="flex flex-col gap-[6px]">
+                                    <p class="text-[14px] font-semibold leading-[20px]">Filled</p>
+                                    <div class="w-[202px] rounded-[4px] bg-[#f9f5ff] h-[8px]">
+                                        <div class="bg-[#16a34ab3] rounded-[4px] h-[8px] w-[100%]"></div>
+                                    </div>
+                                    <p class="text-[12px] leading-[18px]">3/3 filled</p>
+                                </div>
+                            </td>
+
+                            <td>
+                                <button>
+                                   <img src="./assets/Dropdown.png"/>
+                                </button>
+                            </td>
+                        </tr>
+
+                        <tr class="border-b border-b-black">
+                            <td class="flex gap-[12px] items-center">
+                                <div class="border py-[4px] px-[12px] border-black rounded-[8px]">
+                                    <p class="text-center text-[12px] font-semibold">JAN</p>
+                                    <p class="text-center text-[20px] font-semibold">06</p>
+                                </div>
+                                <div>
+                                    <p class="text-[14px] font-medium leading-[20px]">ER Swing Shift</p>
+                                    <p class="text-[14px] font-bold leading-[20px]">11:00 - 23:00, 12hrs</p>
+                                </div></td>
+
+                                <td>
+                                <div class="bg-[#ffffff] w-[142px]
+                                flex gap-[8px]">
+                                    <span class="border-[1px] border-black rounded-[4px] px-[8px] py-[2px] text-[12px] font-medium leading-[18px]">RN</span>
+                                    <span class="border-[1px] border-black rounded-[4px] px-[8px] py-[2px] text-[12px] font-medium leading-[18px]">TNCC</span>
+                                </div>
+                            </td>
+
+                            <td>
+                                <div>
+                                    <p class="text-[14px] leading-[20px]">Emergency Dept</p>
+                                    <p class="text-sm font-bold ">Trauma Bay</p>
+                                </div>
+                            </td>
+
+                            <td>
+                                <div class="flex flex-col gap-[6px]">
+                                    <p class="text-[14px] font-semibold leading-[20px]">Compliance Risk</p>
+                                    <p class="text-[12px] leading-[18px]">Pending Approval S. Olalekan</p>
+                                    <p class="text-[12px] leading-[18px]">(Overtime)</p>
+                                </div>
+                            </td>
+
+                            <td>
+                                <button>
+                                    <img src="./assets/Dropdown.png"/>
+                                </button>
+                            </td>
+                        </tr>
+
+                        <tr class="border-b border-b-black">
+                            <td class="flex gap-[12px] items-center">
+                                <div class="border py-[4px] px-[12px] border-black rounded-[8px]">
+                                    <p class="text-center text-[12px] font-semibold">JAN</p>
+                                    <p class="text-center text-[20px] font-semibold">07</p>
+                                </div>
+                                <div>
+                                    <p class="text-[14px] font-medium leading-[20px]">General Ward</p>
+                                    <p class="text-[14px] font-bold leading-[20px]">07:00 - 15:00, 8hrs</p>
+                                </div></td>
+
+                                <td>
+                                <div class="bg-[#ffffff] w-[142px]
+                                flex gap-[8px]">
+                                    <span class="border-[1px] border-black rounded-[4px] px-[8px] py-[2px] text-[12px] font-medium leading-[18px]">CNA</span>
+                                </div>
+                            </td>
+
+                            <td>
+                                <div>
+                                    <p class="text-[14px] leading-[20px]">Main Campus</p>
+                                    <p class="text-sm font-bold ">East Wing</p>
+                                </div>
+                            </td>
+
+                            <td>
+                                <div class="flex flex-col gap-[6px]">
+                                    <p class="text-[14px] font-semibold leading-[20px]">Open</p>
+                                    <div class="w-[202px] rounded-[4px] bg-[#f9f5ff] h-[8px]">
+                                        <div class="bg-[#1d72db99] rounded-[4px] h-[8px] w-[50%]"></div>
+                                    </div>
+                                    <p class="text-[12px] leading-[18px]">2/4 filled</p>
+                                </div>
+                            </td>
+
+                            <td>
+                                <button>
+                                    <img src="./assets/Dropdown.png"/>
+                                </button>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td class="flex gap-[12px] items-center">
+                                <div class="border py-[4px] px-[12px] border-black rounded-[8px]">
+                                    <p class="text-center text-[12px] font-semibold">JAN</p>
+                                    <p class="text-center text-[20px] font-semibold">07</p>
+                                </div>
+                                <div>
+                                    <p class="text-[14px] font-medium leading-[20px]">General Ward</p>
+                                    <p class="text-[14px] font-bold leading-[20px]">15:00 - 23:00, 8hrs</p>
+                                </div></td>
+
+                                <td>
+                                <div class="bg-[#ffffff] w-[142px]
+                                flex gap-[8px]">
+                                    <span class="border-[1px] border-black rounded-[4px] px-[8px] py-[2px] text-[12px] font-medium leading-[18px]">CNA</span>
+                                </div>
+                            </td>
+
+                            <td>
+                                <div>
+                                    <p class="text-[14px] leading-[20px]">Main Campus</p>
+                                    <p class="text-sm font-bold ">East Wing</p>
+                                </div>
+                            </td>
+
+                            <td>
+                                <div class="flex flex-col gap-[6px]">
+                                    <p class="text-[14px] font-semibold leading-[20px]">Open</p>
+                                    <div class="w-[202px] rounded-[4px] bg-[#f9f5ff] h-[8px]">
+                                        <div class="bg-[#1d72dbb3] rounded-[4px] h-[8px] w-[100%]"></div>
+                                    </div>
+                                    <p class="text-[12px] leading-[18px]">0/4 filled</p>
+                                </div>
+                            </td>
+
+                            <td>
+                                <button>
+                                    <img src="./assets/Dropdown.png"/>
+                                </button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+    </main>
+
+    <script src="Schedule.js"></script>
+</body>
+</html>
