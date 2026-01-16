@@ -1,0 +1,253 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+}
+
+.sidebar{
+    width: 250px;
+    background-color: #265e92;
+    color: white;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: fixed;
+    height: 100vh;
+}
+
+.sidebar-header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.sidebar-header img {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    margin-bottom: 10px;
+    cursor: pointer;
+}
+
+.sidebar-header h3 {
+    font-size: 18px;
+    margin-bottom: 5px;
+}
+
+.sidebar-header p {
+    font-size: 14px;
+    color: #ccc;
+}
+.sidebar-nav ul {
+    list-style-type: none;
+    padding: 0;
+    width: 100%;
+}
+
+.sidebar-nav ul li {
+    margin: 10px 0;
+}
+
+.sidebar-nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+.sidebar-nav ul li a:hover {
+    text-align: underline;
+}
+
+.logout {
+    margin-top: auto;
+}
+
+.logout a {
+    color: white;
+    font-size: 16px;
+    text-decoration: none;
+}
+
+.main-content {
+    flex-grow: 1;
+    background-color: #f9f9f9;
+    padding: 40px;
+    margin-left: 250px;
+    max-width: calc(100% - 250px);
+}
+
+.header h1 {
+    font-size: 32px;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.broadcast-message {
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.alert {
+    background-color: #d33f49;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 15px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+}
+
+.alert-icon {
+    margin-right: 50px;
+    font-size: 40px;
+}
+/* .ALERT-ICON p {
+    margin-right: 10px;
+    display: flex;
+    align-items: center;
+} */
+
+.broadcast-form {
+    display: flex;
+    flex-direction: column;
+    margin-top: 10px;
+}
+
+.broadcast-form textarea {
+    width: 100%;
+    height: 150px;
+    padding: 10px;
+    font-size: 16px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    resize: none;
+}
+
+.message-info {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 20px;
+}
+
+.contact-options {
+    margin-bottom: 20px;
+}
+
+.contact-options input {
+    margin-right: 5px;
+}
+
+.contact-options label {
+    font-size: 16px;
+}
+
+.additional-instruction-toggle {
+    font-size: 16px;
+    align-self: flex-start;
+    background-color: transparent;
+    color: #0078d4;
+    border: none;
+    margin-bottom: 20px;
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+.shift-coverage {
+    margin-bottom: 30px;
+}
+
+.shift-coverage-title {
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.shift-btn {
+    background-color: #005fa3;
+    font-size: 16px;
+    color: white;
+    padding: 12px 25px;
+    margin-right: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.shift-btn:hover {
+    background-color: #00468c;
+}
+
+.send-broadcast-btn {
+    background-color: #2ebe50;
+    font-size: 12px;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-self: center;
+    padding: 15px 25px;
+    border-radius: 5px;
+    width: 40%;
+    cursor: pointer;
+    border: none;
+}
+
+.send-broadcast-btn:hover {
+    background-color: #0056b3;
+}
+
+.divider {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    border: 0;
+    border-top: 1px solid #ddd;
+}
+
+@media (max-width: 768px) {
+    .sidebar {
+        width: 200px;
+        padding: 15px;
+    }
+
+    .main-content {
+        max-width: calc(100% - 200px);
+        padding: 20px;
+    }
+
+    .broadcast-message {
+        padding: 20px;
+    }
+
+    .broadcast-form textarea {
+        height: 120px;
+    }
+
+    .shift-btn {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+
+    .send-broadcast-btn {
+        width: 100%;
+    }
+
+    .broadcast-form textarea, .shift-btn, .send-broadcast-btn {
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 480px) {
+    .shift-btn {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+}
+

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Emergency Broadcast</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <aside class="sidebar">
+        <div class="sidebar-header">
+            <img src="images/profile-pic.jpg" alt="Admin Profile" / class="profile-pic">
+            <h3>Dr. A. Aina</h3>
+            <p>Chief Admin</p>
+        </div>
+        <nav class="sidebar-nav">
+            <ul>
+                <li><a href="#">Dashboard</a></li>
+                <li><a href="#">Schedule</a></li>
+                <li><a href="#">Approvals</a></li>
+                <li><a href="#">Staff</a></li>
+                <li><a href="#">Emergency Broadcast</a></li>
+                <li><a href="#">Notifications</a></li>
+            </ul>
+        </nav>
+        <div class="logout">
+            <a href="#">Logout</a>
+        </div>
+    </aside>
+
+    <main class="main-content">
+        <header class="header">
+            <h1>Emergency Broadcast</h1>
+            
+            <hr class="divider">
+        </header>
+
+        <section class="broadcast-message">
+
+            <div class="alert">
+                <span class="alert-icon">⚠️</span>
+                <p><strong>Critical Staffing Shortage!</strong> <br>Urgent coverage needed. Extra hands required in <br>the <strong>[ER / ICU / Department]</strong> ASAP.</p>
+                
+            </div>
+
+            <p>Broadcast an emergency meeting to all available staff to cover this urgent shift need</p>
+
+            <form class="broadcast-form">
+                <label for="broadcast-message"><strong>Broadcast Message</strong></label>
+                <textarea id="broadcast-message" placeholder="Type your broadcast message here"></textarea>
+            
+                <p class="message-info">Message will be sent as a push notification, text message, and emails to all available staff.</p>
+
+                <div class=" contact-options">
+                    <input type="checkbox" id="mobile" />
+                    <label for="mobile">Mobile Number</label>
+                    <input type="checkbox" id="email" />
+                    <label for="email">Email Address</label>
+                </div>
+
+                <button type="button" class="additional-instruction-toggle">+ Additional Instruction (Optional)</button>
+            
+                <div class="shift-coverage">
+                    <p><strong>Request Shift Coverage For:</strong></p>
+                    <button type="button" class="shift-btn">Now + 4 Hours</button>
+                    <button type="button" class="shift-btn">Now + 8 Hours</button>
+                    <button type="button" class="shift-btn">Now + 12 Hours</button>
+                </div>
+
+                <button type="submit" class="send-broadcast-btn">Send Emergency Broadcast</button>
+            </form>
+
+        </section>
+    </main>
+
+    <script src="index.js"></script>
+</body>
+</html>
