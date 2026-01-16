@@ -16,9 +16,6 @@ html, body{
 }
 
 .sidebar{
-  position: fixed; /* fix sidebar to left */
-  top: 0;
-  left: 0;
   height: 100vh; /* full height */
   width: 250px; /* adjust width as needed */
   overflow-y: auto; /* allow sidebar to scroll if needed */
@@ -177,7 +174,7 @@ html, body{
 
 /* Main content styling */
 .dashboard-content{
-  margin-left: 250px; /* push main content to the right of fixed sidebar */
+  /* margin-left: 250px; push main content to the right of fixed sidebar */
   flex-grow: 1;
   padding: 15px;
   overflow-y: auto; /* only main content scrolls */
@@ -437,7 +434,7 @@ tbody tr:last-child td:last-child{
   display: flex;
   flex-direction: column;
   min-height: 100vh;
-  margin-left: 250px; /* push content to the right of fixed sidebar */
+  /* margin-left: 250px; push content to the right of fixed sidebar */
   overflow-y: auto; /* allow scrolling if needed */
 }
 

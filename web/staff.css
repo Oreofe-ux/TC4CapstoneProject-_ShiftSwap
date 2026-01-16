@@ -9,11 +9,6 @@ body {
     color: #333;
 }
 
-header {
-    background-color: #004a99;
-    color: white;
-    padding: 20px;
-}
 
 .container {
     display: flex;
@@ -384,4 +379,22 @@ table td {
     .action-btn {
         font-size: 16px;
     }
+}
+
+
+.staff-table {
+    display: flex;
+    position: relative;
+}
+
+#sidebar-placeholder {
+    flex: 30%;
+    width: 100%;
+}
+
+.content-section {
+    width: 100%;
+    display: flex;
+    display: block;
+    z-index: 9999999;
 }

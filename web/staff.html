@@ -1,184 +1,364 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Staff Directory</title>
-    <link rel="stylesheet" href="staff.css">
-</head>
-<body>
-
-    <header>
-        <div class="container">
-            <h1>Staff Directory</h1>
-            <div class="controls">
-                <input type="search" placeholder="Search by name, license ID, or role">
-                <button class="staff-btn">Add New Staff</button>
-            </div>
-            <!-- Filter Section -->
-            <div class="filters">
-                <label for="qualifiedOnly">Qualified Only:</label>
-                <select id="qualifiedOnly">
-                    <option value="all">All</option>
-                    <option value="active">Active</option>
-                    <option value="expiring">Expiring</option>
-                    <option value="non-compliant">Non-Compliant</option>
-                    <option value="reviewing">Reviewing</option>
-                </select>
-
-                <label for="role">Role:</label>
-                <select id="role">
-                    <option value="all">All</option>
-                    <option value="nurse">Nurse</option>
-                    <option value="technician">Technician</option>
-                    <option value="doctor">Doctor</option>
-                </select>
-
-                <label for="dept">Dept:</label>
-                <select id="dept">
-                    <option value="all">All</option>
-                    <option value="icu">ICU</option>
-                    <option value="surgery">Surgery</option>
-                    <option value="pediatrics">Pediatrics</option>
-                </select>
-
-                <label for="shift">Shift:</label>
-                <select id="shift">
-                    <option value="all">All</option>
-                    <option value="day">Day</option>
-                    <option value="night">Night</option>
-                </select>
-
-                <!-- Additional Icons (e.g., filters or actions) -->
-                <div class="icon-group">   
-                    <span class="icon"><i class="fa fa-cogs"></i></span> 
-                <!-- setting icons -->
-                    <span class="icon"><i class="fa fa-bell"></i></span> 
-                </div>
-            </div>
-        </div>
-    </header>
-
+    <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+    <link rel="stylesheet" href="dashboard.css">
+    <link rel="stylesheet" href="staff.css" />
+  </head>
+  <body>
+    <header></header>
     <main class="staff-table">
+      <div id="sidebar-placeholder"></div>
+      <div class="content-section">
+        <div class="container">
+          <h1>Staff Directory</h1>
+          <div class="controls">
+            <input
+              type="search"
+              placeholder="Search by name, license ID, or role"
+            />
+            <button class="staff-btn">Add New Staff</button>
+          </div>
+          <!-- Filter Section -->
+          <div class="filters">
+            <label for="qualifiedOnly">Qualified Only:</label>
+            <select id="qualifiedOnly">
+              <option value="all">All</option>
+              <option value="active">Active</option>
+              <option value="expiring">Expiring</option>
+              <option value="non-compliant">Non-Compliant</option>
+              <option value="reviewing">Reviewing</option>
+            </select>
+
+            <label for="role">Role:</label>
+            <select id="role">
+              <option value="all">All</option>
+              <option value="nurse">Nurse</option>
+              <option value="technician">Technician</option>
+              <option value="doctor">Doctor</option>
+            </select>
+
+            <label for="dept">Dept:</label>
+            <select id="dept">
+              <option value="all">All</option>
+              <option value="icu">ICU</option>
+              <option value="surgery">Surgery</option>
+              <option value="pediatrics">Pediatrics</option>
+            </select>
+
+            <label for="shift">Shift:</label>
+            <select id="shift">
+              <option value="all">All</option>
+              <option value="day">Day</option>
+              <option value="night">Night</option>
+            </select>
+
+            <!-- Additional Icons (e.g., filters or actions) -->
+            <div class="icon-group">
+              <span class="icon"><i class="fa fa-cogs"></i></span>
+              <!-- setting icons -->
+              <span class="icon"><i class="fa fa-bell"></i></span>
+            </div>
+          </div>
+        </div>
         <table>
-            <thead>
-                <tr>
-                    <th>STAFF MEMBER</th>
-                    <th>ROLE & DEPT</th>
-                    <th>STATUS</th>
-                    <th>CERTIFICATION</th>
-                    <th>WEEKLY HOURS (MAX 40)</th>
-                    <th>ACTIONS</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr class="active">
-                    <td>
-                        <div class="name-box">Kemi Adeyemi</div>
-                        <div class="staff-id">ID: RN - 8834</div></td>
-                    <td><div class="role">Registered Nurse</div><div class="dept">Emergency Dept</div></td>
-                    <td class="status active"><button class="status-btn active">Active</button></td>
-                    <td><div class="cert-box">RN</div><div class="cert-box">ACLS</div></td>
-                    <td><div class="hours"><span class="time">32hrs</span><div class="progress-bar"><div class="progress active" style="width: 80%;"></div></div><div class="progress icon">80%</div></div></td>
-                    <td><button class="action-btn">...</button></td>
-                </tr>
-                <tr class="expiring">
-                    <td>
-                        <div class="name-box">Kemi Adeyemi</div>
-                        <div class="staff-id">ID: RN - 8834</div></td>
-                    <td><div class="role">CNA</div><div class="dept">ICU</div></td>
-                    <td class="status expiring"><button class="status-btn expiring">Expiring</button></td>
-                    <td><div class="cert-box">BLS</div></td>
-                    <td><div class="hours"><span class="time">55hrs</span><div class="progress-bar"><div class="progress expiring" style="width: 100%;"></div></div><div class="progress icon">Overload</div></div></td>
-                    <td><button class="action-btn">...</button></td>
-                </tr>
-                <tr class="non-compliant">
-                    <td>
-                        <div class="name-box">Kemi Adeyemi</div>
-                        <div class="staff-id">ID: RN - 8834</div></td>
-                    <td><div class="role">Surgical Tech</div><div class="dept">Surgery</div></td>
-                    <td class="non-compliant"><button class="status-btn non-complaint">Non-Compliant</button></td>
-                    <td>None Recorded</td>
-                    <td><div class="hours"><span class="time">0hrs</span><div class="progress-bar"><div class="progress non-compliant" style="width: 0%;"></div></div><div class="progress icon">0%</div></div></td>
-                    <td><button class="action-btn">...</button></td>
-                </tr>
-                <tr class="active">
-                    <td>
-                        <div class="name-box">Kemi Adeyemi</div>
-                        <div class="staff-id">ID: RN - 8834</div></td>
-                    <td><div class="role">Anesthesiologist</div><div class="dept">Surgery</div></td>
-                    <td class="status active"><button class="status-btn active">Active</button></td>
-                    <td><div class="cert-box">MD</div><div class="cert-box">ABA</div></td>
-                    <td><div class="hours"><span class="time">38hrs</span><div class="progress-bar"><div class="progress active" style="width: 95%;"></div></div><div class="progress icon">95%</div></div></td>
-                    <td><button class="action-btn">...</button></td>
-                </tr>
-                <tr class="active">
-                    <td>
-                        <div class="name-box">Kemi Adeyemi</div>
-                        <div class="staff-id">ID: RN - 8834</div></td>
-                    <td><div class="role">Registered Nurse</div><div class="dept">Pediatrics</div></td>
-                    <td class="status active"><button class="status-btn active">Active</button></td>
-                    <td><div class="cert-box">PALS</div><div class="cert-box">CPN</div></td>
-                    <td><div class="hours"><span class="time">12hrs</span><div class="progress-bar"><div class="progress active" style="width: 30%;"></div></div><div class="progress icon">30%</div></div></td>
-                    <td><button class="action-btn">...</button></td>
-                </tr>
-                <tr class="reviewing">
-                    <td>
-                        <div class="name-box">Kemi Adeyemi</div>
-                        <div class="staff-id">ID: RN - 8834</div></td>
-                    <td><div class="role">Head Nurse</div><div class="dept">ICU</div></td>
-                    <td class="status reviewing"><button class="status-btn reviewing">Reviewing</button></td>
-                    <td><div class="cert-box">ACLS</div><div class="cert-box">CCRN</div></td>
-                    <td><div class="hours"><span class="time">42hrs</span><div class="progress-bar"><div class="progress warning" style="width: 50%;"></div></div><div class="progress icon">50%</div></div></td>
-                    <td><button class="action-btn">...</button></td>
-                </tr>
-                <tr class="active">
-                    <td>
-                        <div class="name-box">Kemi Adeyemi</div>
-                        <div class="staff-id">ID: RN - 8834</div></td>
-                    <td><div class="role">Head Nurse</div><div class="dept">ICU</div></td>
-                    <td class="status active"><button class="status-btn active">Active</button></td>
-                    <td><div class="cert-box">PALS</div><div class="cert-box">CPN</div></td>
-                    <td><div class="hours"><span class="time">12hrs</span><div class="progress-bar"><div class="progress active" style="width: 30%;"></div></div><div class="progress icon">30%</div></div></td>
-                    <td><button class="action-btn">...</button></td>
-                </tr>
-                <tr class="active">
-                    <td>
-                        <div class="name-box">Kemi Adeyemi</div>
-                        <div class="staff-id">ID: RN - 8834</div></td>
-                    <td><div class="role">Head Nurse</div><div class="dept">ICU</div></td>
-                    <td class="status active"><button class="status-btn active">Active</button></td>
-                    <td><div class="cert-box">PALS</div><div class="cert-box">CPN</div></td>
-                    <td><div class="hours"><span class="time">12hrs</span><div class="progress-bar"><div class="progress active" style="width: 30%;"></div></div><div class="progress icon">30%</div></div></td>
-                    <td><button class="action-btn">...</button></td>
-                </tr>
-                <tr class="active">
-                    <td>
-                        <div class="name-box">Kemi Adeyemi</div>
-                        <div class="staff-id">ID: RN - 8834</div></td>
-                    <td><div class="role">Head Nurse</div><div class="dept">ICU</div></td>
-                    <td class="status active"><button class="status-btn active">Active</button></td>
-                    <td><div class="cert-box">PALS</div><div class="cert-box">CPN</div></td>
-                    <td><div class="hours"><span class="time">12hrs</span><div class="progress-bar"><div class="progress active" style="width: 30%;"></div></div><div class="progress icon">30%</div></div></td>
-                    <td><button class="action-btn">...</button></td>
-                </tr>
-                <tr class="active">
-                    <td>
-                        <div class="name-box">Kemi Adeyemi</div>
-                        <div class="staff-id">ID: RN - 8834</div></td>
-                    <td><div class="role">Head Nurse</div><div class="dept">ICU</div></td>
-                    <td class="status active"><button class="status-btn active">Active</button></td>
-                    <td><div class="cert-box">PALS</div><div class="cert-box">CPN</div></td>
-                    <td><div class="hours"><span class="time">12hrs</span><div class="progress-bar"><div class="progress active" style="width: 30%;"></div></div><div class="progress icon">30%</div></div></td>
-                    <td><button class="action-btn">...</button></td>
-                </tr>
-                
-            </tbody>
+          <thead>
+            <tr>
+              <th>STAFF MEMBER</th>
+              <th>ROLE & DEPT</th>
+              <th>STATUS</th>
+              <th>CERTIFICATION</th>
+              <th>WEEKLY HOURS (MAX 40)</th>
+              <th>ACTIONS</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="active">
+              <td>
+                <div class="name-box">Kemi Adeyemi</div>
+                <div class="staff-id">ID: RN - 8834</div>
+              </td>
+              <td>
+                <div class="role">Registered Nurse</div>
+                <div class="dept">Emergency Dept</div>
+              </td>
+              <td class="status active">
+                <button class="status-btn active">Active</button>
+              </td>
+              <td>
+                <div class="cert-box">RN</div>
+                <div class="cert-box">ACLS</div>
+              </td>
+              <td>
+                <div class="hours">
+                  <span class="time">32hrs</span>
+                  <div class="progress-bar">
+                    <div class="progress active" style="width: 80%"></div>
+                  </div>
+                  <div class="progress icon">80%</div>
+                </div>
+              </td>
+              <td><button class="action-btn">...</button></td>
+            </tr>
+            <tr class="expiring">
+              <td>
+                <div class="name-box">Kemi Adeyemi</div>
+                <div class="staff-id">ID: RN - 8834</div>
+              </td>
+              <td>
+                <div class="role">CNA</div>
+                <div class="dept">ICU</div>
+              </td>
+              <td class="status expiring">
+                <button class="status-btn expiring">Expiring</button>
+              </td>
+              <td><div class="cert-box">BLS</div></td>
+              <td>
+                <div class="hours">
+                  <span class="time">55hrs</span>
+                  <div class="progress-bar">
+                    <div class="progress expiring" style="width: 100%"></div>
+                  </div>
+                  <div class="progress icon">Overload</div>
+                </div>
+              </td>
+              <td><button class="action-btn">...</button></td>
+            </tr>
+            <tr class="non-compliant">
+              <td>
+                <div class="name-box">Kemi Adeyemi</div>
+                <div class="staff-id">ID: RN - 8834</div>
+              </td>
+              <td>
+                <div class="role">Surgical Tech</div>
+                <div class="dept">Surgery</div>
+              </td>
+              <td class="non-compliant">
+                <button class="status-btn non-complaint">Non-Compliant</button>
+              </td>
+              <td>None Recorded</td>
+              <td>
+                <div class="hours">
+                  <span class="time">0hrs</span>
+                  <div class="progress-bar">
+                    <div class="progress non-compliant" style="width: 0%"></div>
+                  </div>
+                  <div class="progress icon">0%</div>
+                </div>
+              </td>
+              <td><button class="action-btn">...</button></td>
+            </tr>
+            <tr class="active">
+              <td>
+                <div class="name-box">Kemi Adeyemi</div>
+                <div class="staff-id">ID: RN - 8834</div>
+              </td>
+              <td>
+                <div class="role">Anesthesiologist</div>
+                <div class="dept">Surgery</div>
+              </td>
+              <td class="status active">
+                <button class="status-btn active">Active</button>
+              </td>
+              <td>
+                <div class="cert-box">MD</div>
+                <div class="cert-box">ABA</div>
+              </td>
+              <td>
+                <div class="hours">
+                  <span class="time">38hrs</span>
+                  <div class="progress-bar">
+                    <div class="progress active" style="width: 95%"></div>
+                  </div>
+                  <div class="progress icon">95%</div>
+                </div>
+              </td>
+              <td><button class="action-btn">...</button></td>
+            </tr>
+            <tr class="active">
+              <td>
+                <div class="name-box">Kemi Adeyemi</div>
+                <div class="staff-id">ID: RN - 8834</div>
+              </td>
+              <td>
+                <div class="role">Registered Nurse</div>
+                <div class="dept">Pediatrics</div>
+              </td>
+              <td class="status active">
+                <button class="status-btn active">Active</button>
+              </td>
+              <td>
+                <div class="cert-box">PALS</div>
+                <div class="cert-box">CPN</div>
+              </td>
+              <td>
+                <div class="hours">
+                  <span class="time">12hrs</span>
+                  <div class="progress-bar">
+                    <div class="progress active" style="width: 30%"></div>
+                  </div>
+                  <div class="progress icon">30%</div>
+                </div>
+              </td>
+              <td><button class="action-btn">...</button></td>
+            </tr>
+            <tr class="reviewing">
+              <td>
+                <div class="name-box">Kemi Adeyemi</div>
+                <div class="staff-id">ID: RN - 8834</div>
+              </td>
+              <td>
+                <div class="role">Head Nurse</div>
+                <div class="dept">ICU</div>
+              </td>
+              <td class="status reviewing">
+                <button class="status-btn reviewing">Reviewing</button>
+              </td>
+              <td>
+                <div class="cert-box">ACLS</div>
+                <div class="cert-box">CCRN</div>
+              </td>
+              <td>
+                <div class="hours">
+                  <span class="time">42hrs</span>
+                  <div class="progress-bar">
+                    <div class="progress warning" style="width: 50%"></div>
+                  </div>
+                  <div class="progress icon">50%</div>
+                </div>
+              </td>
+              <td><button class="action-btn">...</button></td>
+            </tr>
+            <tr class="active">
+              <td>
+                <div class="name-box">Kemi Adeyemi</div>
+                <div class="staff-id">ID: RN - 8834</div>
+              </td>
+              <td>
+                <div class="role">Head Nurse</div>
+                <div class="dept">ICU</div>
+              </td>
+              <td class="status active">
+                <button class="status-btn active">Active</button>
+              </td>
+              <td>
+                <div class="cert-box">PALS</div>
+                <div class="cert-box">CPN</div>
+              </td>
+              <td>
+                <div class="hours">
+                  <span class="time">12hrs</span>
+                  <div class="progress-bar">
+                    <div class="progress active" style="width: 30%"></div>
+                  </div>
+                  <div class="progress icon">30%</div>
+                </div>
+              </td>
+              <td><button class="action-btn">...</button></td>
+            </tr>
+            <tr class="active">
+              <td>
+                <div class="name-box">Kemi Adeyemi</div>
+                <div class="staff-id">ID: RN - 8834</div>
+              </td>
+              <td>
+                <div class="role">Head Nurse</div>
+                <div class="dept">ICU</div>
+              </td>
+              <td class="status active">
+                <button class="status-btn active">Active</button>
+              </td>
+              <td>
+                <div class="cert-box">PALS</div>
+                <div class="cert-box">CPN</div>
+              </td>
+              <td>
+                <div class="hours">
+                  <span class="time">12hrs</span>
+                  <div class="progress-bar">
+                    <div class="progress active" style="width: 30%"></div>
+                  </div>
+                  <div class="progress icon">30%</div>
+                </div>
+              </td>
+              <td><button class="action-btn">...</button></td>
+            </tr>
+            <tr class="active">
+              <td>
+                <div class="name-box">Kemi Adeyemi</div>
+                <div class="staff-id">ID: RN - 8834</div>
+              </td>
+              <td>
+                <div class="role">Head Nurse</div>
+                <div class="dept">ICU</div>
+              </td>
+              <td class="status active">
+                <button class="status-btn active">Active</button>
+              </td>
+              <td>
+                <div class="cert-box">PALS</div>
+                <div class="cert-box">CPN</div>
+              </td>
+              <td>
+                <div class="hours">
+                  <span class="time">12hrs</span>
+                  <div class="progress-bar">
+                    <div class="progress active" style="width: 30%"></div>
+                  </div>
+                  <div class="progress icon">30%</div>
+                </div>
+              </td>
+              <td><button class="action-btn">...</button></td>
+            </tr>
+            <tr class="active">
+              <td>
+                <div class="name-box">Kemi Adeyemi</div>
+                <div class="staff-id">ID: RN - 8834</div>
+              </td>
+              <td>
+                <div class="role">Head Nurse</div>
+                <div class="dept">ICU</div>
+              </td>
+              <td class="status active">
+                <button class="status-btn active">Active</button>
+              </td>
+              <td>
+                <div class="cert-box">PALS</div>
+                <div class="cert-box">CPN</div>
+              </td>
+              <td>
+                <div class="hours">
+                  <span class="time">12hrs</span>
+                  <div class="progress-bar">
+                    <div class="progress active" style="width: 30%"></div>
+                  </div>
+                  <div class="progress icon">30%</div>
+                </div>
+              </td>
+              <td><button class="action-btn">...</button></td>
+            </tr>
+          </tbody>
         </table>
+      </div>
     </main>
-
+    <script>
+      // Load sidebar dynamically
+      fetch("sidebar.html")
+        .then((res) => res.text())
+        .then((html) => {
+          // Replace the placeholder with the loaded sidebar
+          const temp = document.createElement("div");
+          temp.innerHTML = html;
+          const sidebar = temp.firstElementChild;
+          const placeholder = document.getElementById("sidebar-placeholder");
+          placeholder.replaceWith(sidebar);
+          if (typeof loadAdminProfile === "function") loadAdminProfile();
+        })
+        .catch((err) => console.error("Error loading sidebar:", err));
+    </script>
     <script src="staff.js"></script>
-
-</body>
+  </body>
 </html>
-

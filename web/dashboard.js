@@ -2,9 +2,9 @@
 
 const token = localStorage.getItem("token");
 
-if (!token) {
-  window.location.href = "login.html";
-}
+// if (!token) {
+//   window.location.href = "login.html";
+// }
 
 
 
@@ -176,14 +176,32 @@ const mockShifts = [
 // ==================================================
 // 6️⃣ POPULATE FILTER DROPDOWNS
 // ==================================================
-function populateDepartments() {
-  const dropdown = document.getElementById("filter-department");
-  if (!dropdown) return;
+async function populateDepartments() {
+    const departments = await fetchDepartments();
+    const dropdown = document.getElementById("filter-department");
+    if (!dropdown) return;
 
-  dropdown.innerHTML = `<option disabled selected>Department</option>`;
-  departmentsList.forEach(dept => {
-    dropdown.innerHTML += `<option value="${dept}">${dept}</option>`;
-  });
+    dropdown.innerHTML = `<option disabled selected>Department</option>`;
+
+    const dropdownOptions = departments || departmentsList;
+    dropdownOptions?.forEach(dept => {
+      dropdown.innerHTML += `<option value="${dept}">${dept}</option>`;
+    });
+}
+
+async function fetchDepartments() {
+  const response = await fetch(
+    "https://shiftswap-backend-4w40.onrender.com/api/departments",
+    {
+      headers: {
+        Authorization: `Bearer ${getToken()}`
+      }
+    }
+  );
+  if (!response.ok) return null;
+
+  const result = await response.json();
+  return result.data.map(dept => dept.name);
 }
 
 function populateStatusAndDateDropdowns() {
