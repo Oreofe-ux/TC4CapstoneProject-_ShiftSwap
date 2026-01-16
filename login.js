@@ -85,7 +85,7 @@ loginBtn.addEventListener("click", async () => {
     // REDIRECT TO DASHBOARD
     // ===============================
     console.log("Redirecting to dashboard...");
-    window.location.replace("index.html");
+    window.location.replace("dashboard.html");
 
   } catch (error) {
     console.log("Login error:", error);
