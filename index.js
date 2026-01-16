@@ -3,7 +3,7 @@
 // LOGIN PAGE LOGIC
 // ===============================
 
-console.log("login.js loaded");
+console.log("index.js loaded");
 
 const password = document.getElementById("password");
 const toggleEye = document.getElementById("toggleEye");
