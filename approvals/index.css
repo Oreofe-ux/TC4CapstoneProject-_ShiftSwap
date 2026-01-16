@@ -1,0 +1,187 @@
+* {
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  margin: 0;
+  background: #f3f5f8;
+}
+
+/* HEADER */
+.topbar {
+  background: #1f1f1f;
+  color: white;
+  padding: 15px 20px;
+}
+
+/* LAYOUT */
+.app {
+  display: flex;
+}
+
+/* SIDEBAR */
+.sidebar {
+  width: 230px;
+  background: #89d0db;
+  padding: 20px;
+}
+
+.sidebar a {
+  display: block;
+  padding: 10px;
+  margin-bottom: 8px;
+  border-radius: 6px;
+}
+
+.sidebar a.active,
+.sidebar a:hover {
+  background: #63b9c8;
+  color: white;
+}
+
+/* MAIN */
+.main {
+  flex: 1;
+  padding: 20px;
+}
+
+/* SUMMARY */
+.summary {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 15px;
+}
+
+.card {
+  padding: 20px;
+  color: white;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: transform .2s;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+}
+
+.card.pending { background: #4a90e2; }
+.card.priority { background: #ff7b6b; }
+.card.time { background: #2cc7b8; }
+
+/* FILTERS */
+.filters {
+  margin: 20px 0;
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  gap: 10px;
+}
+
+.filters input,
+.filters select {
+  padding: 10px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+
+/* GRID */
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 15px;
+}
+
+/* REQUEST LIST */
+.request {
+  background: white;
+  padding: 12px;
+  border-radius: 8px;
+  margin-bottom: 8px;
+  display: flex;
+  justify-content: space-between;
+  cursor: pointer;
+}
+
+.request:hover {
+  background: #eef6fa;
+}
+
+.request small {
+  display: block;
+  color: #666;
+}
+
+/* BADGES */
+.badge {
+  padding: 6px 12px;
+  border-radius: 14px;
+  font-size: 12px;
+}
+
+.badge.pending { background: #3498db; color: white; }
+.badge.urgent { background: #e74c3c; color: white; }
+
+/* DETAILS */
+.meta {
+  background: white;
+  padding: 15px;
+  border-radius: 10px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+}
+
+.back {
+  border: none;
+  background: none;
+  color: #3498db;
+  cursor: pointer;
+  margin-bottom: 10px;
+}
+
+/* ACCORDION */
+.accordion button {
+  width: 100%;
+  padding: 12px;
+  margin-top: 10px;
+  background: #eaf3f7;
+  border: none;
+  cursor: pointer;
+}
+
+.panel {
+  display: none;
+  background: white;
+  padding: 12px;
+}
+
+/* ACTIONS */
+.actions {
+  margin-top: 15px;
+}
+
+.approve {
+  background: #2ecc71;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+}
+
+.reject {
+  background: #e74c3c;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+}
+
+/* UTILS */
+.hidden {
+  display: none;
+}
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}

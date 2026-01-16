@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>ShiftSwap | Pending Approvals</title>
+  <link rel="stylesheet" href="index.css">
+</head>
+<body>
+
+<header class="topbar">
+  <h2>Pending Approvals</h2>
+</header>
+
+<div class="app">
+
+  <!-- SIDEBAR -->
+  <aside class="sidebar">
+    <div class="profile">
+      <strong>Admin</strong>
+    </div>
+    <nav>
+      <a class="active">Approvals</a>
+      <a>Dashboard</a>
+      <a>Schedule</a>
+      <a>Notifications</a>
+    </nav>
+  </aside>
+
+  <!-- MAIN -->
+  <main class="main">
+
+    <!-- SUMMARY CARDS -->
+    <div class="summary">
+      <div class="card pending" onclick="showPending()">
+        <span>Total Pending</span>
+        <strong>15</strong>
+      </div>
+
+      <div class="card priority" onclick="showHighPriority()">
+        <span>High Priority</span>
+        <strong>6</strong>
+      </div>
+
+      <div class="card time">
+        <span>Time Sensitive</span>
+        <strong>2</strong>
+      </div>
+    </div>
+
+    <!-- FILTER BAR -->
+    <div class="filters">
+      <input type="text" placeholder="Search by employee name or request..." />
+
+      <select>
+        <option>All Types</option>
+        <option>Family Emergency</option>
+        <option>Travel</option>
+        <option>Medical Appointment</option>
+        <option>Logistical & Safety</option>
+      </select>
+
+      <select>
+        <option>All Priorities</option>
+        <option>High</option>
+        <option>Medium</option>
+        <option>Low</option>
+      </select>
+    </div>
+
+    <!-- CONTENT GRID -->
+    <div class="grid">
+
+      <!-- LEFT LIST -->
+      <section id="listView">
+
+        <!-- PENDING LIST -->
+        <div id="pendingList">
+          <div class="request" onclick="openDetails()">
+            <div>
+              <strong>Family Emergency</strong>
+              <small>Frank Steve — Medical Doctor</small>
+            </div>
+            <span class="badge pending">Pending</span>
+          </div>
+
+          <div class="request" onclick="openDetails()">
+            <div>
+              <strong>Travel</strong>
+              <small>Agnes Owusu — Registered Nurse</small>
+            </div>
+            <span class="badge pending">Pending</span>
+          </div>
+
+          <div class="request" onclick="openDetails()">
+            <div>
+              <strong>Medical Appointment</strong>
+              <small>Ayodeji Joeph - pharmacist</small>
+            </div>
+            <span class="badge pending">Pending</span>
+          </div>
+
+          <div class="request" onclick="openDetails()">
+            <div>
+              <strong>Logistical & Safety Reason</strong>
+              <small>Chika Emeremnu — Physiotherapist</small>
+            </div>
+            <span class="badge pending">Pending</span>
+          </div>
+        </div>
+
+        <!-- HIGH PRIORITY LIST (MIDDLE IMAGE) -->
+        <div id="priorityList" class="hidden">
+          <div class="request">
+            <div>
+              <strong>Family Emergency</strong>
+              <small>Frank Steve — Medical Doctor</small>
+            </div>
+            <span class="badge urgent">Pending</span>
+          </div>
+
+          <div class="request">
+            <div>
+              <strong>Medical Appointment</strong>
+              <small>Blessing K — Midwife</small>
+            </div>
+            <span class="badge urgent">Pending</span>
+          </div>
+        </div>
+
+      </section>
+
+      <!-- RIGHT DETAILS PANEL -->
+      <section id="detailsView" class="hidden">
+
+        <button class="back" onclick="goBack()">← Back to Pending Approvals</button>
+
+        <h3>Shift Swap Request</h3>
+
+        <!-- META DETAILS -->
+        <div class="meta">
+          <div><strong>Date:</strong> Jan 12, 2026</div>
+          <div><strong>Time:</strong> 7:00 AM – 3:00 PM</div>
+          <div><strong>Department:</strong> Nursing</div>
+          <div><strong>Role:</strong> Registered Nurse</div>
+          <div><strong>Registrar:</strong> ShiftSwap System</div>
+        </div>
+
+        <!-- ACCORDIONS -->
+        <div class="accordion">
+
+          <button onclick="toggle(this)">Original Staff</button>
+          <div class="panel">
+            <p><strong>Name:</strong> Agnes Owusu</p>
+            <p><strong>Role:</strong> Registered Nurse</p>
+            <p><strong>Ward:</strong> Ward A</p>
+          </div>
+
+          <button onclick="toggle(this)">Covering Staff</button>
+          <div class="panel">
+            <p><strong>Name:</strong> Gift Imoh</p>
+            <p><strong>Role:</strong> Registered Nurse</p>
+            <p><strong>Ward:</strong> Ward B</p>
+          </div>
+
+          <button onclick="toggle(this)">Reason</button>
+          <div class="panel">
+            Travel outside region for urgent family matter.
+          </div>
+
+        </div>
+
+        <!-- ACTIONS -->
+        <div class="actions">
+          <button class="approve">Approve</button>
+          <button class="reject">Reject</button>
+        </div>
+
+      </section>
+
+    </div>
+
+  </main>
+</div>
+
+<script src="index.js"></script>
+</body>
+</html>
