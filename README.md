@@ -21,3 +21,12 @@ git checkout -b your-branch-name-eg.loginUI
 git add .
 git commit -m "what you created in your branch"
 git push origin your-branch-name
+
+## TECHNOLOGIES USED
+HTML
+CSS
+JavaScript
+Tailwind CSS
+
+##To view the project click on
+
