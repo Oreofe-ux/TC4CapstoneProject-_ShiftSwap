@@ -68,8 +68,6 @@ loginBtn.addEventListener("click", async () => {
 
     let data2 = JSON.stringify(data);
 
-
-    console.log("I am here");
     console.log(data.data.user.role);
 
     // ===============================
