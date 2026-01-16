@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Manager Dashboard</title>
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="stylesheet" href="index.css">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+
+  <script src="https://kit.fontawesome.com/5521ad14db.js" crossorigin="anonymous"></script>
+</head>
+<body>
+  <div class="dashboard-container">
+    <aside id="sidebar-placeholder"></aside>
+
+    <main class="dashboard-content">
+      <header class="dashboard-header">
+        <h2>Dashboard</h2>
+      </header>
+      <hr class="dashboard-separator">
+
+      <section class="action-buttons">
+        <button class="action-btn pending-approvals" data-filter="Pending">Pending Approvals</button>
+
+        <button class="action-btn today-shifts" data-filter="Today">Today's Shifts</button>
+
+        <button class="action-btn emergency-alerts" data-filter="Risk">Emergency Alerts</button>
+      </section>
+
+      <section class="dashboard-data">
+        <div class="filter-bar">
+          <select class="filter-dropdown" name="date" id="filter-date">
+          </select>
+
+          <select class="filter-dropdown" name="department" id="filter-department">
+          </select>
+
+          <select class="filter-dropdown" name="status" id="filter-status">
+          </select>
+
+          <button class="filter-button" id="apply-filter">Filter</button>
+        </div>
+
+        <div class="table-container">
+          <table>
+            <thead>
+              <tr>
+                <th>Staff Name</th>
+                <th>Shift Date & Time</th>
+                <th>Department</th>
+                <th>Status</th>
+                <th>Review Status</th>
+              </tr>
+            </thead>
+
+            <tbody id="shift-table-body"></tbody>
+          </table>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script>
+  // Load sidebar dynamically
+  fetch('sidebar.html')
+      .then(res => res.text())
+      .then(html => {
+        // Replace the placeholder with the loaded sidebar
+        const temp = document.createElement('div');
+        temp.innerHTML = html;
+        const sidebar = temp.firstElementChild;
+        const placeholder = document.getElementById('sidebar-placeholder');
+        placeholder.replaceWith(sidebar);
+        if (typeof loadAdminProfile === 'function') loadAdminProfile();
+      })
+      .catch(err => console.error('Error loading sidebar:', err));
+</script>
+
+  <script src="js/config.js"></script>
+  <script src="js/app.js"></script>
+  <script src="js/index.js"></script>
+</body>
+</html>
