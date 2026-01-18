@@ -9,60 +9,6 @@ body {
     display: flex;
 }
 
-.sidebar{
-    width: 250px;
-    background-color: #265e92;
-    color: white;
-    padding: 20px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    position: fixed;
-    height: 100vh;
-}
-
-.sidebar-header {
-    text-align: center;
-    margin-bottom: 30px;
-}
-
-.sidebar-header img {
-    width: 60px;
-    height: 60px;
-    border-radius: 50%;
-    margin-bottom: 10px;
-    cursor: pointer;
-}
-
-.sidebar-header h3 {
-    font-size: 18px;
-    margin-bottom: 5px;
-}
-
-.sidebar-header p {
-    font-size: 14px;
-    color: #ccc;
-}
-.sidebar-nav ul {
-    list-style-type: none;
-    padding: 0;
-    width: 100%;
-}
-
-.sidebar-nav ul li {
-    margin: 10px 0;
-}
-
-.sidebar-nav ul li a {
-    color: white;
-    text-decoration: none;
-    font-size: 18px;
-}
-
-.sidebar-nav ul li a:hover {
-    text-align: underline;
-}
-
 .logout {
     margin-top: auto;
 }

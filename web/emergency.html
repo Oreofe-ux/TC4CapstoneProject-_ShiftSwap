@@ -4,30 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Emergency Broadcast</title>
+    <link rel="stylesheet" href="dashboard.css">
     <link rel="stylesheet" href="emergency.css">
 </head>
 <body>
-    <aside class="sidebar">
-        <div class="sidebar-header">
-            <img src="images/profile-pic.jpg" alt="Admin Profile" / class="profile-pic">
-            <h3>Dr. A. Aina</h3>
-            <p>Chief Admin</p>
-        </div>
-        <nav class="sidebar-nav">
-            <ul>
-                <li><a href="dashboard.html">Dashboard</a></li>
-                <li><a href="ScheduleList.html">Schedule</a></li>
-                <li><a href="approval.html">Approvals</a></li>
-                <li><a href="staff.html">Staff</a></li>
-                <li><a href="emergency.html">Emergency Broadcast</a></li>
-                <li><a href="notifications.html">Notifications</a></li>
-            </ul>
-        </nav>
-        <div class="logout">
-            <a href="login.html">Logout</a>
-        </div>
+    <aside id="sidebar-placeholder">
     </aside>
-
     <main class="main-content">
         <header class="header">
             <h1>Emergency Broadcast</h1>
@@ -45,7 +27,7 @@
 
             <p>Broadcast an emergency meeting to all available staff to cover this urgent shift need</p>
 
-            <form class="broadcast-form">
+            <form id="broadcast-form" method="post" action="#" class="broadcast-form">
                 <label for="broadcast-message"><strong>Broadcast Message</strong></label>
                 <textarea id="broadcast-message" placeholder="Type your broadcast message here"></textarea>
             
@@ -62,9 +44,9 @@
             
                 <div class="shift-coverage">
                     <p><strong>Request Shift Coverage For:</strong></p>
-                    <button type="button" class="shift-btn">Now + 4 Hours</button>
-                    <button type="button" class="shift-btn">Now + 8 Hours</button>
-                    <button type="button" class="shift-btn">Now + 12 Hours</button>
+                    <button type="button" class="shift-btn" data-value="4">Now + 4 Hours</button>
+                    <button type="button" class="shift-btn" data-value="8">Now + 8 Hours</button>
+                    <button type="button" class="shift-btn" data-value="12">Now + 12 Hours</button>
                 </div>
 
                 <button type="submit" class="send-broadcast-btn">Send Emergency Broadcast</button>
@@ -72,7 +54,22 @@
 
         </section>
     </main>
-
+     <script>
+        // Load sidebar dynamically
+        fetch('sidebar.html')
+      .then(res => res.text())
+      .then(html => {
+        // Replace the placeholder with the loaded sidebar
+        const temp = document.createElement('div');
+        temp.innerHTML = html;
+        const sidebar = temp.firstElementChild;
+        const placeholder = document.getElementById('sidebar-placeholder');
+        placeholder.replaceWith(sidebar);
+        if (typeof loadAdminProfile === 'function') loadAdminProfile();
+      })
+      .catch(err => console.error('Error loading sidebar:', err));
+  </script>
+    <script src="./httpclient.js"></script>
     <script src="emergency.js"></script>
 </body>
 
