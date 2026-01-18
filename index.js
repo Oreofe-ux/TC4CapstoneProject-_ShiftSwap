@@ -63,7 +63,12 @@ loginBtn.addEventListener("click", async () => {
     // ===============================
     // SAVE AUTH DATA
     // ===============================
-    localStorage.setItem("token", data.token);
+
+    // reset local storage for new login
+    localStorage.removeItem("token");
+    localStorage.removeItem("adminProfile");
+
+    localStorage.setItem("token", data.data.token);
     localStorage.setItem("adminProfile", JSON.stringify(data));
 
     let data2 = JSON.stringify(data);
