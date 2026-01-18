@@ -246,7 +246,7 @@ html, body{
   width: 233px;
   cursor: pointer;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.4);
-  background-image: url("/images/mdi--menu-down.svg");
+  background-image: url("../images/mdi--menu-down.svg");
   background-repeat: no-repeat;
   background-position: right 12px center;
   transition: border-color 0.25s ease, box-shadow 0.25s ease;
