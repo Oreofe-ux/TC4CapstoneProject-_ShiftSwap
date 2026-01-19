@@ -44,7 +44,7 @@ async function loadAdminProfile() {
   const adminData = {
     name: "Dr. A. Aina",
     role: "Chief Admin",
-    avatar: "https://www.gravatar.com/avatar/?d=mp&s=150"
+    avatar: "./assets/Logo.png"
   };
 
   // Sidebar HEADER (avatar only)
